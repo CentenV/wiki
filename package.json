@@ -1,20 +1,24 @@
 {
   "name": "wiki",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "init": "python3 md_convert.py"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.84.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
+    "@tanstack/router-devtools": "^1.84.2",
+    "@tanstack/router-plugin": "^1.83.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
