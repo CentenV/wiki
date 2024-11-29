@@ -23,7 +23,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: artifacts
+          name: github-pages
           path: ./dist
   deploy:
     name: Deploy
@@ -35,14 +35,14 @@ jobs:
       id-token: write
 
     environment: 
-      name: artifacts
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Pull artifacts
         uses: actions/download-artifact@v4
         with: 
-          name: artifacts
+          name: github-pages
           path: ./dist
       - name: Deploy/Publish to GitHub Pages
         id: deployment
