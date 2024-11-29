@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   // plugins: [react(), TanStackRouterVite()],
   plugins: [react()],
-  base: "https://centenv.github.io/wiki/"
+  base: "https://wiki.centen.dev/"
 })
