@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as PagesTestIndexImport } from './routes/_pages/test/index'
 import { Route as PagesHomecloudIndexImport } from './routes/_pages/homecloud/index'
+import { Route as PagesDevelopmentIndexImport } from './routes/_pages/development/index'
 import { Route as PagesHomecloudInstallkvmIndexImport } from './routes/_pages/homecloud/install_kvm/index'
 
 // Create/Update Routes
@@ -36,6 +37,12 @@ const PagesHomecloudIndexRoute = PagesHomecloudIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const PagesDevelopmentIndexRoute = PagesDevelopmentIndexImport.update({
+  id: '/_pages/development/',
+  path: '/development/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const PagesHomecloudInstallkvmIndexRoute =
   PagesHomecloudInstallkvmIndexImport.update({
     id: '/_pages/homecloud/install_kvm/',
@@ -52,6 +59,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/development/': {
+      id: '/_pages/development/'
+      path: '/development'
+      fullPath: '/development'
+      preLoaderRoute: typeof PagesDevelopmentIndexImport
       parentRoute: typeof rootRoute
     }
     '/_pages/homecloud/': {
@@ -82,6 +96,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/development': typeof PagesDevelopmentIndexRoute
   '/homecloud': typeof PagesHomecloudIndexRoute
   '/test': typeof PagesTestIndexRoute
   '/homecloud/install_kvm': typeof PagesHomecloudInstallkvmIndexRoute
@@ -89,6 +104,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/development': typeof PagesDevelopmentIndexRoute
   '/homecloud': typeof PagesHomecloudIndexRoute
   '/test': typeof PagesTestIndexRoute
   '/homecloud/install_kvm': typeof PagesHomecloudInstallkvmIndexRoute
@@ -97,6 +113,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/_pages/development/': typeof PagesDevelopmentIndexRoute
   '/_pages/homecloud/': typeof PagesHomecloudIndexRoute
   '/_pages/test/': typeof PagesTestIndexRoute
   '/_pages/homecloud/install_kvm/': typeof PagesHomecloudInstallkvmIndexRoute
@@ -104,12 +121,18 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/homecloud' | '/test' | '/homecloud/install_kvm'
+  fullPaths:
+    | '/'
+    | '/development'
+    | '/homecloud'
+    | '/test'
+    | '/homecloud/install_kvm'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/homecloud' | '/test' | '/homecloud/install_kvm'
+  to: '/' | '/development' | '/homecloud' | '/test' | '/homecloud/install_kvm'
   id:
     | '__root__'
     | '/'
+    | '/_pages/development/'
     | '/_pages/homecloud/'
     | '/_pages/test/'
     | '/_pages/homecloud/install_kvm/'
@@ -118,6 +141,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PagesDevelopmentIndexRoute: typeof PagesDevelopmentIndexRoute
   PagesHomecloudIndexRoute: typeof PagesHomecloudIndexRoute
   PagesTestIndexRoute: typeof PagesTestIndexRoute
   PagesHomecloudInstallkvmIndexRoute: typeof PagesHomecloudInstallkvmIndexRoute
@@ -125,6 +149,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PagesDevelopmentIndexRoute: PagesDevelopmentIndexRoute,
   PagesHomecloudIndexRoute: PagesHomecloudIndexRoute,
   PagesTestIndexRoute: PagesTestIndexRoute,
   PagesHomecloudInstallkvmIndexRoute: PagesHomecloudInstallkvmIndexRoute,
@@ -141,6 +166,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/_pages/development/",
         "/_pages/homecloud/",
         "/_pages/test/",
         "/_pages/homecloud/install_kvm/"
@@ -148,6 +174,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/_pages/development/": {
+      "filePath": "_pages/development/index.tsx"
     },
     "/_pages/homecloud/": {
       "filePath": "_pages/homecloud/index.tsx"
