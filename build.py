@@ -25,20 +25,16 @@ def map_paths():
         # Traverse to locate the proper path
         current_level = path_tree
         for level in splitted_path:
-            # Add to children
-            if level in current_level.keys():
-                current_level = current_level[level]
             # Create a new node if node does not exist
-            else:
-                current_level[level] = {}            
+            if level not in current_level.keys():
+                current_level[level] = {}
+            # Add to children
+            current_level = current_level[level]
+
     return path_tree
 
-def output_ts():
-    
-    pass
 
 if __name__ == "__main__":
-
     print("Mapping URLs..........")
     # Set _pages in src as the current directory
     os.chdir("./src/routes/_pages")
@@ -47,8 +43,6 @@ if __name__ == "__main__":
     # Convert paths into an object tree
     tree = map_paths()
     # Output to JSON file
-    with open("map.json", "w") as map_file:
+    os.chdir("../../../public")
+    with open("wikimap.json", "w") as map_file:
         map_file.write(json.dumps(tree))
-
-    
-    print(full_paths)

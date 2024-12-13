@@ -12,8 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as PagesTestdir1IndexImport } from './routes/_pages/testdir1/index'
-import { Route as PagesTestdir1Testdir12IndexImport } from './routes/_pages/testdir1/testdir12/index'
+import { Route as PagesTestIndexImport } from './routes/_pages/test/index'
+import { Route as PagesHomecloudIndexImport } from './routes/_pages/homecloud/index'
+import { Route as PagesHomecloudInstallkvmIndexImport } from './routes/_pages/homecloud/install_kvm/index'
 
 // Create/Update Routes
 
@@ -23,16 +24,22 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const PagesTestdir1IndexRoute = PagesTestdir1IndexImport.update({
-  id: '/_pages/testdir1/',
-  path: '/testdir1/',
+const PagesTestIndexRoute = PagesTestIndexImport.update({
+  id: '/_pages/test/',
+  path: '/test/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const PagesTestdir1Testdir12IndexRoute =
-  PagesTestdir1Testdir12IndexImport.update({
-    id: '/_pages/testdir1/testdir12/',
-    path: '/testdir1/testdir12/',
+const PagesHomecloudIndexRoute = PagesHomecloudIndexImport.update({
+  id: '/_pages/homecloud/',
+  path: '/homecloud/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PagesHomecloudInstallkvmIndexRoute =
+  PagesHomecloudInstallkvmIndexImport.update({
+    id: '/_pages/homecloud/install_kvm/',
+    path: '/homecloud/install_kvm/',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -47,18 +54,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_pages/testdir1/': {
-      id: '/_pages/testdir1/'
-      path: '/testdir1'
-      fullPath: '/testdir1'
-      preLoaderRoute: typeof PagesTestdir1IndexImport
+    '/_pages/homecloud/': {
+      id: '/_pages/homecloud/'
+      path: '/homecloud'
+      fullPath: '/homecloud'
+      preLoaderRoute: typeof PagesHomecloudIndexImport
       parentRoute: typeof rootRoute
     }
-    '/_pages/testdir1/testdir12/': {
-      id: '/_pages/testdir1/testdir12/'
-      path: '/testdir1/testdir12'
-      fullPath: '/testdir1/testdir12'
-      preLoaderRoute: typeof PagesTestdir1Testdir12IndexImport
+    '/_pages/test/': {
+      id: '/_pages/test/'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof PagesTestIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/homecloud/install_kvm/': {
+      id: '/_pages/homecloud/install_kvm/'
+      path: '/homecloud/install_kvm'
+      fullPath: '/homecloud/install_kvm'
+      preLoaderRoute: typeof PagesHomecloudInstallkvmIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -68,42 +82,52 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/testdir1': typeof PagesTestdir1IndexRoute
-  '/testdir1/testdir12': typeof PagesTestdir1Testdir12IndexRoute
+  '/homecloud': typeof PagesHomecloudIndexRoute
+  '/test': typeof PagesTestIndexRoute
+  '/homecloud/install_kvm': typeof PagesHomecloudInstallkvmIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/testdir1': typeof PagesTestdir1IndexRoute
-  '/testdir1/testdir12': typeof PagesTestdir1Testdir12IndexRoute
+  '/homecloud': typeof PagesHomecloudIndexRoute
+  '/test': typeof PagesTestIndexRoute
+  '/homecloud/install_kvm': typeof PagesHomecloudInstallkvmIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_pages/testdir1/': typeof PagesTestdir1IndexRoute
-  '/_pages/testdir1/testdir12/': typeof PagesTestdir1Testdir12IndexRoute
+  '/_pages/homecloud/': typeof PagesHomecloudIndexRoute
+  '/_pages/test/': typeof PagesTestIndexRoute
+  '/_pages/homecloud/install_kvm/': typeof PagesHomecloudInstallkvmIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/testdir1' | '/testdir1/testdir12'
+  fullPaths: '/' | '/homecloud' | '/test' | '/homecloud/install_kvm'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/testdir1' | '/testdir1/testdir12'
-  id: '__root__' | '/' | '/_pages/testdir1/' | '/_pages/testdir1/testdir12/'
+  to: '/' | '/homecloud' | '/test' | '/homecloud/install_kvm'
+  id:
+    | '__root__'
+    | '/'
+    | '/_pages/homecloud/'
+    | '/_pages/test/'
+    | '/_pages/homecloud/install_kvm/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PagesTestdir1IndexRoute: typeof PagesTestdir1IndexRoute
-  PagesTestdir1Testdir12IndexRoute: typeof PagesTestdir1Testdir12IndexRoute
+  PagesHomecloudIndexRoute: typeof PagesHomecloudIndexRoute
+  PagesTestIndexRoute: typeof PagesTestIndexRoute
+  PagesHomecloudInstallkvmIndexRoute: typeof PagesHomecloudInstallkvmIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PagesTestdir1IndexRoute: PagesTestdir1IndexRoute,
-  PagesTestdir1Testdir12IndexRoute: PagesTestdir1Testdir12IndexRoute,
+  PagesHomecloudIndexRoute: PagesHomecloudIndexRoute,
+  PagesTestIndexRoute: PagesTestIndexRoute,
+  PagesHomecloudInstallkvmIndexRoute: PagesHomecloudInstallkvmIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,18 +141,22 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_pages/testdir1/",
-        "/_pages/testdir1/testdir12/"
+        "/_pages/homecloud/",
+        "/_pages/test/",
+        "/_pages/homecloud/install_kvm/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/_pages/testdir1/": {
-      "filePath": "_pages/testdir1/index.tsx"
+    "/_pages/homecloud/": {
+      "filePath": "_pages/homecloud/index.tsx"
     },
-    "/_pages/testdir1/testdir12/": {
-      "filePath": "_pages/testdir1/testdir12/index.tsx"
+    "/_pages/test/": {
+      "filePath": "_pages/test/index.tsx"
+    },
+    "/_pages/homecloud/install_kvm/": {
+      "filePath": "_pages/homecloud/install_kvm/index.tsx"
     }
   }
 }

@@ -14,7 +14,7 @@ export default {
     },
     colors: {
       "wiki-background-color": "#121212",
-      "wiki-foreground-color": "#3f3f3f",
+      "wiki-foreground-color": "#353535",
       "wiki-border-color": "#717171",
     },
     borderRadius: {
