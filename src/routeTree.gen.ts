@@ -12,7 +12,8 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as TestfolderTestpathIndexImport } from './routes/_testfolder/testpath/index'
+import { Route as PagesTestdir1IndexImport } from './routes/_pages/testdir1/index'
+import { Route as PagesTestdir1Testdir12IndexImport } from './routes/_pages/testdir1/testdir12/index'
 
 // Create/Update Routes
 
@@ -22,11 +23,18 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const TestfolderTestpathIndexRoute = TestfolderTestpathIndexImport.update({
-  id: '/_testfolder/testpath/',
-  path: '/testpath/',
+const PagesTestdir1IndexRoute = PagesTestdir1IndexImport.update({
+  id: '/_pages/testdir1/',
+  path: '/testdir1/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const PagesTestdir1Testdir12IndexRoute =
+  PagesTestdir1Testdir12IndexImport.update({
+    id: '/_pages/testdir1/testdir12/',
+    path: '/testdir1/testdir12/',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,11 +47,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_testfolder/testpath/': {
-      id: '/_testfolder/testpath/'
-      path: '/testpath'
-      fullPath: '/testpath'
-      preLoaderRoute: typeof TestfolderTestpathIndexImport
+    '/_pages/testdir1/': {
+      id: '/_pages/testdir1/'
+      path: '/testdir1'
+      fullPath: '/testdir1'
+      preLoaderRoute: typeof PagesTestdir1IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/testdir1/testdir12/': {
+      id: '/_pages/testdir1/testdir12/'
+      path: '/testdir1/testdir12'
+      fullPath: '/testdir1/testdir12'
+      preLoaderRoute: typeof PagesTestdir1Testdir12IndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +68,42 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/testpath': typeof TestfolderTestpathIndexRoute
+  '/testdir1': typeof PagesTestdir1IndexRoute
+  '/testdir1/testdir12': typeof PagesTestdir1Testdir12IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/testpath': typeof TestfolderTestpathIndexRoute
+  '/testdir1': typeof PagesTestdir1IndexRoute
+  '/testdir1/testdir12': typeof PagesTestdir1Testdir12IndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_testfolder/testpath/': typeof TestfolderTestpathIndexRoute
+  '/_pages/testdir1/': typeof PagesTestdir1IndexRoute
+  '/_pages/testdir1/testdir12/': typeof PagesTestdir1Testdir12IndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/testpath'
+  fullPaths: '/' | '/testdir1' | '/testdir1/testdir12'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/testpath'
-  id: '__root__' | '/' | '/_testfolder/testpath/'
+  to: '/' | '/testdir1' | '/testdir1/testdir12'
+  id: '__root__' | '/' | '/_pages/testdir1/' | '/_pages/testdir1/testdir12/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  TestfolderTestpathIndexRoute: typeof TestfolderTestpathIndexRoute
+  PagesTestdir1IndexRoute: typeof PagesTestdir1IndexRoute
+  PagesTestdir1Testdir12IndexRoute: typeof PagesTestdir1Testdir12IndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  TestfolderTestpathIndexRoute: TestfolderTestpathIndexRoute,
+  PagesTestdir1IndexRoute: PagesTestdir1IndexRoute,
+  PagesTestdir1Testdir12IndexRoute: PagesTestdir1Testdir12IndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +117,18 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_testfolder/testpath/"
+        "/_pages/testdir1/",
+        "/_pages/testdir1/testdir12/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/_testfolder/testpath/": {
-      "filePath": "_testfolder/testpath/index.tsx"
+    "/_pages/testdir1/": {
+      "filePath": "_pages/testdir1/index.tsx"
+    },
+    "/_pages/testdir1/testdir12/": {
+      "filePath": "_pages/testdir1/testdir12/index.tsx"
     }
   }
 }

@@ -1,0 +1,7 @@
+{
+    "testdir1": {
+        "nesteddir1": {}
+    },
+    "testdir2": {},
+    "testdir3": {}
+}
