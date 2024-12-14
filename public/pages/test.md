@@ -4,6 +4,9 @@
 
 # This is a Heading h1
 ## This is a Heading h2
+### This is a Heading h3
+#### This is a Heading h4
+##### This is a Heading h5
 ###### This is a Heading h6
 
 ## Emphasis
@@ -24,6 +27,8 @@ _You **can** combine them_
 * Item 2
 * Item 2a
 * Item 2b
+    * Item 3a
+    * Item 3b
 
 ### Ordered
 
@@ -35,7 +40,7 @@ _You **can** combine them_
 
 ## Images
 
-![This is an alt text.](/image/sample.webp "This is a sample image.")
+![This is an alt text.](/assets/sampleimage.jpg "This is a sample image.")
 
 ## Links
 
@@ -57,7 +62,7 @@ You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
 
 ## Blocks of code
 
-```javascript
+```js
 let message = 'Hello world';
 alert(message);
 ```

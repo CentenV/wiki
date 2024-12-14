@@ -12,7 +12,11 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as TestfolderTestpathIndexImport } from './routes/_testfolder/testpath/index'
+import { Route as PagesTestIndexImport } from './routes/_pages/test/index'
+import { Route as PagesLinuxIndexImport } from './routes/_pages/linux/index'
+import { Route as PagesDevelopmentIndexImport } from './routes/_pages/development/index'
+import { Route as PagesLinuxInstallkvmIndexImport } from './routes/_pages/linux/install_kvm/index'
+import { Route as PagesDevelopmentNestedtestIndexImport } from './routes/_pages/development/nestedtest/index'
 
 // Create/Update Routes
 
@@ -22,11 +26,36 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const TestfolderTestpathIndexRoute = TestfolderTestpathIndexImport.update({
-  id: '/_testfolder/testpath/',
-  path: '/testpath/',
+const PagesTestIndexRoute = PagesTestIndexImport.update({
+  id: '/_pages/test/',
+  path: '/test/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const PagesLinuxIndexRoute = PagesLinuxIndexImport.update({
+  id: '/_pages/linux/',
+  path: '/linux/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PagesDevelopmentIndexRoute = PagesDevelopmentIndexImport.update({
+  id: '/_pages/development/',
+  path: '/development/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PagesLinuxInstallkvmIndexRoute = PagesLinuxInstallkvmIndexImport.update({
+  id: '/_pages/linux/install_kvm/',
+  path: '/linux/install_kvm/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PagesDevelopmentNestedtestIndexRoute =
+  PagesDevelopmentNestedtestIndexImport.update({
+    id: '/_pages/development/nestedtest/',
+    path: '/development/nestedtest/',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,11 +68,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_testfolder/testpath/': {
-      id: '/_testfolder/testpath/'
-      path: '/testpath'
-      fullPath: '/testpath'
-      preLoaderRoute: typeof TestfolderTestpathIndexImport
+    '/_pages/development/': {
+      id: '/_pages/development/'
+      path: '/development'
+      fullPath: '/development'
+      preLoaderRoute: typeof PagesDevelopmentIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/linux/': {
+      id: '/_pages/linux/'
+      path: '/linux'
+      fullPath: '/linux'
+      preLoaderRoute: typeof PagesLinuxIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/test/': {
+      id: '/_pages/test/'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof PagesTestIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/development/nestedtest/': {
+      id: '/_pages/development/nestedtest/'
+      path: '/development/nestedtest'
+      fullPath: '/development/nestedtest'
+      preLoaderRoute: typeof PagesDevelopmentNestedtestIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_pages/linux/install_kvm/': {
+      id: '/_pages/linux/install_kvm/'
+      path: '/linux/install_kvm'
+      fullPath: '/linux/install_kvm'
+      preLoaderRoute: typeof PagesLinuxInstallkvmIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +110,76 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/testpath': typeof TestfolderTestpathIndexRoute
+  '/development': typeof PagesDevelopmentIndexRoute
+  '/linux': typeof PagesLinuxIndexRoute
+  '/test': typeof PagesTestIndexRoute
+  '/development/nestedtest': typeof PagesDevelopmentNestedtestIndexRoute
+  '/linux/install_kvm': typeof PagesLinuxInstallkvmIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/testpath': typeof TestfolderTestpathIndexRoute
+  '/development': typeof PagesDevelopmentIndexRoute
+  '/linux': typeof PagesLinuxIndexRoute
+  '/test': typeof PagesTestIndexRoute
+  '/development/nestedtest': typeof PagesDevelopmentNestedtestIndexRoute
+  '/linux/install_kvm': typeof PagesLinuxInstallkvmIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_testfolder/testpath/': typeof TestfolderTestpathIndexRoute
+  '/_pages/development/': typeof PagesDevelopmentIndexRoute
+  '/_pages/linux/': typeof PagesLinuxIndexRoute
+  '/_pages/test/': typeof PagesTestIndexRoute
+  '/_pages/development/nestedtest/': typeof PagesDevelopmentNestedtestIndexRoute
+  '/_pages/linux/install_kvm/': typeof PagesLinuxInstallkvmIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/testpath'
+  fullPaths:
+    | '/'
+    | '/development'
+    | '/linux'
+    | '/test'
+    | '/development/nestedtest'
+    | '/linux/install_kvm'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/testpath'
-  id: '__root__' | '/' | '/_testfolder/testpath/'
+  to:
+    | '/'
+    | '/development'
+    | '/linux'
+    | '/test'
+    | '/development/nestedtest'
+    | '/linux/install_kvm'
+  id:
+    | '__root__'
+    | '/'
+    | '/_pages/development/'
+    | '/_pages/linux/'
+    | '/_pages/test/'
+    | '/_pages/development/nestedtest/'
+    | '/_pages/linux/install_kvm/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  TestfolderTestpathIndexRoute: typeof TestfolderTestpathIndexRoute
+  PagesDevelopmentIndexRoute: typeof PagesDevelopmentIndexRoute
+  PagesLinuxIndexRoute: typeof PagesLinuxIndexRoute
+  PagesTestIndexRoute: typeof PagesTestIndexRoute
+  PagesDevelopmentNestedtestIndexRoute: typeof PagesDevelopmentNestedtestIndexRoute
+  PagesLinuxInstallkvmIndexRoute: typeof PagesLinuxInstallkvmIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  TestfolderTestpathIndexRoute: TestfolderTestpathIndexRoute,
+  PagesDevelopmentIndexRoute: PagesDevelopmentIndexRoute,
+  PagesLinuxIndexRoute: PagesLinuxIndexRoute,
+  PagesTestIndexRoute: PagesTestIndexRoute,
+  PagesDevelopmentNestedtestIndexRoute: PagesDevelopmentNestedtestIndexRoute,
+  PagesLinuxInstallkvmIndexRoute: PagesLinuxInstallkvmIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +193,30 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_testfolder/testpath/"
+        "/_pages/development/",
+        "/_pages/linux/",
+        "/_pages/test/",
+        "/_pages/development/nestedtest/",
+        "/_pages/linux/install_kvm/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/_testfolder/testpath/": {
-      "filePath": "_testfolder/testpath/index.tsx"
+    "/_pages/development/": {
+      "filePath": "_pages/development/index.tsx"
+    },
+    "/_pages/linux/": {
+      "filePath": "_pages/linux/index.tsx"
+    },
+    "/_pages/test/": {
+      "filePath": "_pages/test/index.tsx"
+    },
+    "/_pages/development/nestedtest/": {
+      "filePath": "_pages/development/nestedtest/index.tsx"
+    },
+    "/_pages/linux/install_kvm/": {
+      "filePath": "_pages/linux/install_kvm/index.tsx"
     }
   }
 }

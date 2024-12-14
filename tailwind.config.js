@@ -7,21 +7,22 @@ export default {
   theme: {
     extend: {
       spacing: {
-        "wiki-top-bar": "4rem",
-        "wiki-sidebar-full": "18rem",
+        "wiki-sidebar-full": "16rem",
         "wiki-logo": "10%"
       }
     },
     colors: {
-      "wiki-background-color": "#121212",
-      "wiki-foreground-color": "#3f3f3f",
-      "wiki-border-color": "#717171",
+      "wiki-background-color": "#000000",
+      "wiki-foreground-color": "#151515",
+      "wiki-hud-elements-color": "#353535",
+      "wiki-border-color": "#FFFFFF",
+      "wiki-hud-border-color": "#717171"
     },
     borderRadius: {
       "wiki": "0.4rem"
     },
     borderWidth: {
-      "wiki": "2px"
+      "wiki": "1px"
     },
   },
   plugins: [],
