@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import Markdown from 'react-markdown';
+import { ContentPage } from '../../../components';
 
 export const Route = createFileRoute('/_pages/test/')({
   component: RouteComponent,
@@ -16,5 +16,5 @@ function RouteComponent() {
     func();
   }, []);
 
-  return <Markdown>{fileContent}</Markdown>
+  return <ContentPage>{fileContent}</ContentPage>
 }

@@ -4,12 +4,74 @@
 
 body {
     color: white;
+    font: 1rem;
 }
 
 header {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.4rem;
+}
+
+h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.3rem;
+    border-bottom: solid 1px;
+    border-color: white;
+}
+h2 {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: solid 1px;
+    border-color: white;
+}
+h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+h5 {
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+h6 {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #b2b2b2;
+    margin-bottom: 0.5rem;
+}
+pre {
+    background-color: #4d4d4d;
+    padding: 1.2rem;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+pre > code {
+    background-color: #4d4d4d;
+}
+p > code {
+    border-radius: 0.4rem;
+    background-color: #4d4d4d;
+    padding: 0.3em;
+}
+blockquote {
+    border-left: 3px;
+    border-left-style: solid;
+    border-color: #393939;
+    padding-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .error-msg {
@@ -18,7 +80,6 @@ header {
     background-color: #ff4646;
     padding: 1em 1em 1em 1em;
 }
-
 .intermediate-page-bg {
     height: 30%;
     overflow: hidden;

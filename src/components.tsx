@@ -1,9 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export function IntermediatePage({ pageTitle, pageUrl, backgroundImage, offset }: { pageTitle: string, pageUrl: string, backgroundImage: {url: string, video: boolean}, offset?: string }) {
     // Resolve all child pages
-    const [childPages, updateChildPages] = useState<string[]>([]);
+    const [childPages, updateChildPages] = useState<{ childPage: string, title: string }[]>([]);
     const [mapError, updateMapError] = useState(false);
     useEffect(() => {
         async function main() {
@@ -11,9 +13,9 @@ export function IntermediatePage({ pageTitle, pageUrl, backgroundImage, offset }
             const splitUrl = pageUrl.split("/");
             splitUrl.splice(0, 1);
     
-            // Traverse through the wikimap tree and locate the 
-            const wikiMapFileContent = await fetch("/wikimap.json").then((res) => res.json());
-            let currentTreeLevel = wikiMapFileContent;
+            // Find the current level on the path tree
+            const wikiMapJson = await fetch("/wikimap.json").then((res) => res.json());
+            let currentTreeLevel = wikiMapJson;
             splitUrl.map((level: string) => {
                 // Level is in the children
                 if (level in currentTreeLevel) {
@@ -24,9 +26,11 @@ export function IntermediatePage({ pageTitle, pageUrl, backgroundImage, offset }
                 }
             });
 
-            // List all child pages
+            // List all child pages and resolve their titles
             const pages: string[] = Object.keys(currentTreeLevel);
-            updateChildPages(pages);
+            const pageTitlesJson = await fetch("/pages/pagetitles.json").then((res) => res.json());
+            const titleResolvedPages: { childPage: string, title: string }[] = pages.map((pageName: string) => { return { childPage: pageName, title: pageTitlesJson[pageName] != undefined ? pageTitlesJson[pageName] : pageName } });
+            updateChildPages(titleResolvedPages);
         }
         main();
     }, [pageUrl]);
@@ -43,9 +47,13 @@ export function IntermediatePage({ pageTitle, pageUrl, backgroundImage, offset }
                 {/* Links */}
                 {mapError && <div className="error-msg"><b>Wiki Mapping Error:</b> Rerun build.py and inspect <i>wikimap.json</i> to ensure that all pages are properly mapped out</div>}
                 <div className="flex flex-col gap-3">
-                    {childPages.map((childPage: string) => <Link href="" to={`${pageUrl}/${childPage}`}>{childPage}</Link>)}
+                    {childPages.map((entry, index) => <Link to={`${pageUrl}/${entry.childPage}`} key={index}>{entry.title}</Link>)}
                 </div>
             </div>
         </div>
     );
+}
+
+export function ContentPage({ children }: { children: string }) {
+    return <div className="w-full h-full px-12 pt-8 pb-12 overflow-scroll"><Markdown remarkPlugins={[remarkGfm]}>{children}</Markdown></div>
 }

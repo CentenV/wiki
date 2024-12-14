@@ -6,9 +6,5 @@ export const Route = createFileRoute('/_pages/development/')({
 })
 
 function RouteComponent() {
-  return (
-    <>
-      <IntermediatePage pageTitle={"Development"} pageUrl='/development' backgroundImage={{ url: 'development.jpg', video: false }} offset='-translate-y-32' />
-    </>
-  );
+  return <IntermediatePage pageTitle={"Development"} pageUrl='/development' backgroundImage={{ url: 'development.jpg', video: false }} offset='-translate-y-32' />;
 }
