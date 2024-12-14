@@ -3,5 +3,23 @@
 @tailwind utilities;
 
 body {
-    color: white
+    color: white;
+}
+
+header {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+}
+
+.error-msg {
+    color: white;
+    border-radius: 0.4rem;
+    background-color: #ff4646;
+    padding: 1em 1em 1em 1em;
+}
+
+.intermediate-page-bg {
+    height: 30%;
+    overflow: hidden;
 }

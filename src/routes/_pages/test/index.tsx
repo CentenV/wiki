@@ -10,7 +10,7 @@ function RouteComponent() {
   const [fileContent, updateFileContent] = useState("");
   useEffect(() => {
     async function func() {
-      const content = await fetch("/test.md").then((res) => res.text())
+      const content = await fetch("/pages/test.md").then((res) => res.text())
       updateFileContent(content);
     }
     func();
