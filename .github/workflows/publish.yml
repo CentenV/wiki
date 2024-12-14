@@ -21,8 +21,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Init Node
         uses: actions/setup-node@v4
+      - name: Init Python        
+        uses: actions/setup-python@v5
       - name: NPM Install
         run: npm ci
+      - name: Initialize Wiki
+        run: npm run init
       - name: NPM Build
         run: npm run build
       - name: Configure GitHub Pages
