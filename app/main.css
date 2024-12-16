@@ -2,18 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Lexend */
-@font-face {
-  font-family: "Lexend";
-  src: url("/assets/Lexend.ttf");
-}
-
-
 body {
   color: white;
   font: 1rem;
-  font-family: "Lexend";
-  font-weight: 300;
+  font-family: var(--lexend-font);
+  font-weight: 400;
 }
 
 header {
