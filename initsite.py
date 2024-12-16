@@ -45,28 +45,28 @@ def map_paths(paths):
             current_level = current_level[level]
     return path_tree
 
-# # Go through all Markdown files and resolve page titles
-# def resolve_page_titles():
-#     md_titles = {}
-#     for entry in os.listdir():
-#         # Markdown file identified
-#         if entry[-3:] == ".md":
-#             # Read file
-#             with open(entry) as f:
-#                 lines = f.readlines()
-#                 # Find the first line with the h1 (#) tag
-#                 title = None
-#                 for line in lines:
-#                     # Update title when line is found and terminate the search process
-#                     if line.split(" ")[0] == "#":
-#                         title = line[1:].strip()
-#                         break
-#                 # Log entry
-#                 if title == None:
-#                     md_titles[entry[:-3]] = entry[:-3]
-#                 else:
-#                     md_titles[entry[:-3]] = title
-#     return md_titles
+# Go through all Markdown files and resolve page titles
+def resolve_page_titles():
+    md_titles = {}
+    for entry in os.listdir():
+        # Markdown file identified
+        if entry[-3:] == ".md":
+            # Read file
+            with open(entry) as f:
+                lines = f.readlines()
+                # Find the first line with the h1 (#) tag
+                title = None
+                for line in lines:
+                    # Update title when line is found and terminate the search process
+                    if line.split(" ")[0] == "#":
+                        title = line[1:].strip()
+                        break
+                # Log entry
+                if title == None:
+                    md_titles[entry[:-3]] = entry[:-3]
+                else:
+                    md_titles[entry[:-3]] = title
+    return md_titles
 
 
 if __name__ == "__main__":
@@ -75,15 +75,15 @@ if __name__ == "__main__":
     (page_paths, full_paths) = traverse(f"{ROOT}/app/(pages)")
 
     # Map all the paths into a tree
-    print("Building URL Tree..........")
-    tree = map_paths(page_paths)
-    os.chdir(f"{ROOT}/public")
-    with open("wikimap.json", "w") as map_file:
-        map_file.write(json.dumps(tree))
+    # print("Building URL Tree..........")
+    # tree = map_paths(page_paths)
 
     # Resolve page titles
-    print("Resolving page titles..........")
-    # os.chdir("pages")
-    # page_titles = resolve_page_titles()
+    # print("Resolving page titles..........")
+    # page_titles = resolve_page_titles([path for path in full_paths])
     # with open("pagetitles.json", "w") as title_file:
     #     title_file.write(json.dumps(page_titles))
+
+    # os.chdir(f"{ROOT}/public")
+    # with open("wikimap.json", "w") as map_file:
+        # map_file.write(json.dumps(tree))

@@ -11,7 +11,7 @@ export default function TopicNavigationBar() {
         async function main() {
             const wikiMap = await getWikiMap();
             const fetchedTopics: string[] = [];
-            Object.keys(wikiMap).map((entry) => { fetchedTopics.push(entry[0].toUpperCase() + entry.substring(1, entry.length)); });
+            Object.keys(wikiMap).map((entry) => { fetchedTopics.push(entry); });
             updateTopics(fetchedTopics);
         }
         main();
@@ -22,7 +22,7 @@ export default function TopicNavigationBar() {
             <nav className='flex flex-col overflow-hidden w-wiki-sidebar-full gap-3'>
                 <Link href={"/"} className='rounded-wiki border-wiki px-4 py-3' draggable={false}><Image width={100} height={100} src='/wikilogo.svg' className='w-full h-full pointer-events-none' draggable={false} alt="Wiki Logo" /></Link>
                 <div className='flex flex-col gap-3 p-4 border rounded-wiki border-wiki border-wiki-hud-elements-color'>
-                    
+                    {topics.map((topic: string) => <Link href={`/${topic}`} key={topic}>{topic[0].toUpperCase() + topic.substring(1, topic.length)}</Link>)}
                 </div>
             </nav>
         </>
