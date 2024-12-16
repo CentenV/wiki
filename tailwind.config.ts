@@ -2,16 +2,29 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      spacing: {
+        "wiki-sidebar-full": "16rem",
+        "wiki-logo": "10%"
+      }
+    },
+    colors: {
+      "wiki-background-color": "#000000",
+      "wiki-foreground-color": "#151515",
+      "wiki-hud-elements-color": "#353535",
+      "wiki-border-color": "#FFFFFF",
+      "wiki-hud-border-color": "#717171"
+    },
+    borderRadius: {
+      "wiki": "0.4rem"
+    },
+    borderWidth: {
+      "wiki": "1px"
     },
   },
   plugins: [],
