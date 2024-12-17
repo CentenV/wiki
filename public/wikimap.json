@@ -1,1 +1,8 @@
-{"development": {"test": {"nestedtest": {}}, "test2": {}}}
+{
+    "test": {},
+    "development": {
+        "nestedtest": {},
+        "test2": {}
+    },
+    "reconciletest": {}
+}

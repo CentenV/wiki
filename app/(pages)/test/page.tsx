@@ -1,5 +1,5 @@
 import { ContentPage } from "@/app/components";
-import Content, { metadata } from "./content.mdx";
+import Content from "./content.mdx";
 
 // export const metadata = {
 //     title: "test"
