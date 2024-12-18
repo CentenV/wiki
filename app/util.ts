@@ -9,6 +9,10 @@ export function formatTitle(pageTitle: string) {
 
 export async function getWikiMap() {
     const wikiMapFileContents = await fetch("/wikimap.json").then((res) => res.json());
-    console.log(wikiMapFileContents);
     return wikiMapFileContents;
+}
+
+export async function getPageTitles() {
+    const pageDataFileContents = await fetch("/pagedata.json").then((res) => res.json());
+    return pageDataFileContents;
 }

@@ -23,8 +23,15 @@ def reconcile_and_output(output_path, data):
 	with open(output_path, "w") as out_file:
 		out_file.write(json.dumps(data, indent=4))
 
-# Traverse paths finding what directories contain an page.mdx file
 def traverse(folder):
+	"""Traverse paths finding what directories contain an page.mdx file
+
+	Args:
+		folder (str): The folder where all the wiki pages
+
+	Returns:
+		_type_: _description_
+	"""
 	os.chdir(folder)
 	pages = []
 
@@ -106,15 +113,13 @@ def resolve_page_titles(args):
 					break
 			# Log entry
 			if title == None:
-				md_titles[relativeURLs] = relativeURLs.split("/")[-1:][0]
+				md_titles["/" + relativeURLs] = relativeURLs.split("/")[-1:][0]
 				prnt_warning(f"No title provided at page {relativeURLs}")
 			else:
-				md_titles[relativeURLs] = title
+				md_titles["/" + relativeURLs] = title
 				print(f"{relativeURLs} -> {title}")
 
-
 	return md_titles
-
 
 
 if __name__ == "__main__":

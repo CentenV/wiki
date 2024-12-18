@@ -1,5 +1,4 @@
 {
-    "test": "Markdown syntax guide",
-    "development/nestedtest": "Nested page test",
-    "development/test2": "test2"
+    "/test": "Markdown syntax guide",
+    "/development/nestedtest": "Blocks of code"
 }
