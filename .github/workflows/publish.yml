@@ -48,8 +48,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: NPM Install
         run: npm ci
-      - name: Initialize Wiki
-        run: npm run init
+      # - name: Initialize Wiki
+      #   run: npm run init
       - name: NPM Build
         run: npm run build
       - name: Upload artifacts
