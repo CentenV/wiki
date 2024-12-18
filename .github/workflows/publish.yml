@@ -1,7 +1,4 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Publish Wiki
 
 on:
@@ -62,6 +59,7 @@ jobs:
 
   # Deployment job
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
