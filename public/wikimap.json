@@ -1,7 +1,0 @@
-{
-    "test": {},
-    "development": {
-        "nestedtest": {}
-    },
-    "reconciletest": {}
-}
