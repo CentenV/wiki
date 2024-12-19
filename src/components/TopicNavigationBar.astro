@@ -7,13 +7,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/icons/*
 const topics = import.meta.glob("../pages/*/*.astro", { eager: true });
 ---
 
-<nav class="flex flex-col overflow-hidden w-wiki-sidebar-full gap-3">
+<nav class="flex flex-col col-start-1 col-span-1 overflow-hidden w-full gap-3">
     <!-- <a href="/" class='flex' draggable={false}><img src={wikiLogo.src} alt="Wiki Logo" class="w-5/6 h-5/6" /></a> -->
     <a href="/" class="h-16" draggable={false}
         ><img src={wikiLogo.src} alt="Wiki Logo" class="h-full" /></a
     >
     <div
-        class="flex flex-col gap-3 p-4 border rounded-wiki border-wiki border-wiki-hud-elements-color"
+        class="flex flex-col gap-3 p-4 border rounded-wiki border-wiki-default border-wiki-hud-elements-color"
     >
         {
             Object.keys(topics).map((topicPageFile) => {

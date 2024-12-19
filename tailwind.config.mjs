@@ -6,21 +6,29 @@ export default {
 			spacing: {
 				"wiki-sidebar-full": "16rem",
 				"wiki-logo": "10%"
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: "100%"
+					}
+				}
 			}
 		},
 		colors: {
-			"wiki-background-color": "#000000",
-			"wiki-foreground-color": "#151515",
+			"wiki-background-color": "#121212",
 			"wiki-hud-elements-color": "#353535",
-			"wiki-border-color": "#FFFFFF",
 			"wiki-hud-border-color": "#717171"
 		},
 		borderRadius: {
-			"wiki": "0.4rem"
+			"wiki": "0.5rem"
 		},
 		borderWidth: {
-			"wiki": "1px"
+			"wiki-default": "1px",
+			"wiki-h2": "1px",
 		},
 	},
-	plugins: [],
+	plugins: [
+		require("@tailwindcss/typography")
+	],
 }
