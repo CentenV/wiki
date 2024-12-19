@@ -1,8 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
+import tailwind from "@astrojs/tailwind";
+
 export default defineConfig({
-    site: "https://wiki.centen.dev",
-    base: "/",
+  site: "https://wiki.centen.dev",
+  base: "/",
+  integrations: [mdx(), tailwind()],
 });
