@@ -1,15 +1,16 @@
 ---
-import { string } from "astro:schema";
 import wikiLogo from "@assets/wikilogo.svg";
 
-// const posts = Object.values(import.meta.glob("../pages/*.astro", { eager: true }));
-// console.log(posts);
+const topics = import.meta.glob("../pages/*/*.astro", { eager: true });
 ---
 
 <nav class='flex flex-col overflow-hidden w-wiki-sidebar-full gap-3'>
     <a href="/" class='rounded-wiki border-wiki px-4 py-3' draggable={false}><img src={wikiLogo.src} alt="Wiki Logo" /></a>
     <div class='flex flex-col gap-3 p-4 border rounded-wiki border-wiki border-wiki-hud-elements-color'>
-        <!-- {posts.map((name) => (<div>{name}</div>))} -->
-        {/* {topics.map((topic: string) => <Lx/nk href={`/${topic}`} key={topic}>{topic[0].toUpperCase() + topic.substring(1, topic.length)}</Lx>)} */}
+        {Object.keys(topics).map((topicPageFile) => {
+            const splitTopicPageUrl = topicPageFile.split("/")
+            const topic = splitTopicPageUrl[2];
+            return (<a href={`/${topic}`}>{topic[0].toUpperCase() + topic.substring(1, topic.length)}</a>);
+        })}
     </div>
 </nav>

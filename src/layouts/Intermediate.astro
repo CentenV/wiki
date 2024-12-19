@@ -8,20 +8,20 @@ const { title, backgroundImage } = Astro.props;
 
 <div class="flex flex-col h-full w-full">
     {/* Background Image/Video */}
-    <div class="intermediate-page-bg rounded-wiki">
+    <div class=`intermediate-page-bg rounded-wiki h-1/3 overflow-hidden ${backgroundImage.offset}`>
         {
             backgroundImage.video ? (
                 <video
                     autoplay={true}
                     muted
                     loop
-                    src={`/assets/${backgroundImage.url}`}
+                    src={backgroundImage.url}
                     class={`w-full rounded-wiki ${backgroundImage.offset}`}
                 />
             ) : (
                 <img
                     alt="Background Banner"
-                    src={`/${backgroundImage.url}`}
+                    src={backgroundImage.url}
                     class={`w-full rounded-wiki ${backgroundImage.offset}`}
                     draggable={false}
                 />
