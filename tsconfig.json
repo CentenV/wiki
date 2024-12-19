@@ -18,6 +18,9 @@
       "@assets/*": [
         "src/assets/*"
       ],
+      "@background/*": [
+        "src/assets/background/*"
+      ],
       "@components/*": [
         "src/components/*"
       ],

@@ -1,0 +1,6 @@
+---
+title: "*PAGE_TITLE*"
+layout: "@layout/Content.astro"
+---
+
+# {frontmatter.title}
