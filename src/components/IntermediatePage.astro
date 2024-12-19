@@ -1,0 +1,20 @@
+---
+import IntermediatePageLayout from "@layout/IntermediatePageLayout.astro";
+
+interface Props {
+    title: string,
+    url: string,
+    pages: Record<string, any>
+};
+const { title, url, pages } = Astro.props;
+---
+
+<IntermediatePageLayout title={title} backgroundImage={{ url: "/developent.jpg", video: false }}>
+    intermediate page
+    {Object.entries(pages).map(([pagePath, data]) => {
+        const destinationUrl = url + pagePath.substring(1, pagePath.length - 4)
+        return <a href={destinationUrl}>{data.frontmatter.title}</a>;
+    })}
+</IntermediatePageLayout>
+
+

@@ -1,0 +1,61 @@
+<svg width="479" xmlns="http://www.w3.org/2000/svg" height="184" id="screenshot-22fced2e-d8a4-802f-8005-723add572715" viewBox="-21 -21 479 184" fill="none" version="1.1"><style>@font-face {
+    font-family: &apos;Blank River&apos;;
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(https://design.penpot.app/assets/by-id/05407720-dc1b-4acf-b058-8d6851a1e02f) format(&apos;woff&apos;);
+  }
+/* cyrillic-ext */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H4tY12eg.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9HxtY12eg.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H5tY12eg.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H2tY12eg.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H7tY12eg.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: &apos;Ubuntu Mono&apos;;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://design.penpot.app/internal/gfonts/font/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H1tY0.woff2) format(&apos;woff2&apos;);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style><g id="shape-22fced2e-d8a4-802f-8005-723add572715"><g id="shape-9027afd8-a91c-80af-8005-72300951ed2c"><g id="shape-9027afd8-a91c-80af-8005-722c5f2fba50"><defs><filter id="filter-render-3" x="-.313" y="-.179" width="1.806" height="1.462" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter><filter id="filter-shadow-render-3" x="-.313" y="-.179" width="1.806" height="1.462" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter></defs><g class="text-container" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" filter="url(#filter-render-3)"><defs><pattern patternUnits="userSpaceOnUse" x="193" y="0" width="60.648" height="156.5" id="fill-0-render-3-0"><rect width="60.648" height="156.5" style="fill: rgb(255, 255, 255); fill-opacity: 1;"/></pattern></defs><text x="193" y="150" dominant-baseline="ideographic" textLength="60.648" lengthAdjust="spacingAndGlyphs" style="text-transform: none; font-family: &quot;Blank River&quot;; letter-spacing: normal; font-style: normal; font-weight: 400; white-space: pre; font-size: 120px; text-decoration: none solid rgb(255, 255, 255); direction: ltr; fill: rgb(255, 255, 255); fill-opacity: 1;" class="fills" id="fills-9027afd8-a91c-80af-8005-722c5f2fba50">V</text></g></g><g id="shape-9027afd8-a91c-80af-8005-72261a37a180"><defs><filter id="filter-render-4" x="-.147" y="-.261" width="1.368" height="1.652" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1.5"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter><filter id="filter-shadow-render-4" x="-.147" y="-.261" width="1.368" height="1.652" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1.5"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter></defs><g class="text-container" transform="matrix(0.996195, -0.087156, 0.087156, 0.996195, -5.731646, 12.580015)" filter="url(#filter-render-4)"><defs><pattern patternUnits="userSpaceOnUse" x="59.699" y="25.928" width="141.617" height="110.5" id="fill-0-render-4-0"><rect width="141.617" height="110.5" style="fill: rgb(255, 255, 255); fill-opacity: 1;"/></pattern></defs><text x="59.699" y="131.928" dominant-baseline="ideographic" textLength="141.617" lengthAdjust="spacingAndGlyphs" style="text-transform: none; font-family: &quot;Blank River&quot;; letter-spacing: normal; font-style: normal; font-weight: 400; white-space: pre; font-size: 85px; text-decoration: none solid rgb(255, 255, 255); direction: ltr; fill: rgb(255, 255, 255); fill-opacity: 1;" class="fills" id="fills-9027afd8-a91c-80af-8005-72261a37a180">enten</text></g></g><g id="shape-9027afd8-a91c-80af-8005-722bf0467e74"><defs><filter id="filter-render-5" x="-.313" y="-.179" width="1.806" height="1.462" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter><filter id="filter-shadow-render-5" x="-.313" y="-.179" width="1.806" height="1.462" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="4" dy="4"/><feGaussianBlur stdDeviation="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="filter_9027afd8-a91c-80af-8005-722648ff0e3a"/><feBlend in="SourceGraphic" in2="filter_9027afd8-a91c-80af-8005-722648ff0e3a" result="shape"/></filter></defs><g class="text-container" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" filter="url(#filter-render-5)"><defs><pattern patternUnits="userSpaceOnUse" x="0" y="13" width="50.922" height="161.5" id="fill-0-render-5-0"><rect width="50.922" height="161.5" style="fill: rgb(255, 255, 255); fill-opacity: 1;"/></pattern></defs><text y="168" dominant-baseline="ideographic" textLength="50.922" lengthAdjust="spacingAndGlyphs" style="text-transform: none; font-family: &quot;Blank River&quot;; letter-spacing: normal; font-style: normal; font-weight: 400; white-space: pre; font-size: 124px; text-decoration: none solid rgb(255, 255, 255); direction: ltr; fill: rgb(255, 255, 255); fill-opacity: 1;" class="fills" id="fills-9027afd8-a91c-80af-8005-722bf0467e74">C</text></g></g></g><g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" id="shape-22fced2e-d8a4-802f-8005-723a7acd71fd"><defs><pattern patternUnits="userSpaceOnUse" x="328" y="26" width="130" height="65" id="fill-0-render-6-0"><rect width="130" height="65" style="fill: rgb(255, 255, 255); fill-opacity: 1;"/></pattern></defs><text x="328" y="97.5" dominant-baseline="ideographic" textLength="130" lengthAdjust="spacingAndGlyphs" style="text-transform: none; font-family: &quot;Ubuntu Mono&quot;; letter-spacing: normal; font-style: normal; font-weight: 700; white-space: pre; font-size: 65px; text-decoration: none solid rgb(255, 255, 255); direction: ltr; fill: rgb(255, 255, 255); fill-opacity: 1;" class="fills" id="fills-22fced2e-d8a4-802f-8005-723a7acd71fd">WIKI</text></g><g id="shape-22fced2e-d8a4-802f-8005-723a9e83f21f"><rect rx="0" ry="0" x="303" y="17" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="2" height="97" style="fill: rgb(255, 255, 255); fill-opacity: 1;" class="fills" id="fills-22fced2e-d8a4-802f-8005-723a9e83f21f"/></g></g></svg>

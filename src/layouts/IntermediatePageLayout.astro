@@ -1,0 +1,39 @@
+---
+interface Props {
+    title: string,
+    backgroundImage: { url: string, video: boolean, offset?: string }
+};
+const { title, backgroundImage } = Astro.props; 
+---
+
+<div class="flex flex-col h-full w-full">
+    {/* Background Image/Video */}
+    <div class="intermediate-page-bg rounded-wiki">
+        {
+            backgroundImage.video ? (
+                <video
+                    autoplay={true}
+                    muted
+                    loop
+                    src={`/assets/${backgroundImage.url}`}
+                    class={`w-full rounded-wiki ${backgroundImage.offset}`}
+                />
+            ) : (
+                <img
+                    alt="Background Banner"
+                    src={`/${backgroundImage.url}`}
+                    class={`w-full rounded-wiki ${backgroundImage.offset}`}
+                    draggable={false}
+                />
+            )
+        }
+    </div>
+    <div class="p-8">
+        {/* Misc */}
+        <header>title</header>
+        {/* Links */}
+        <div class="flex flex-col gap-3">
+            <slot />
+        </div>
+    </div>
+</div>
