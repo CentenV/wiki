@@ -27,11 +27,12 @@ import TopicNavigationBar from "@components/TopicNavigationBar.astro";
 	</body>
 </html>
 
-<style>
-	html, body {
+<style is:global>
+	html,
+	body {
 		color: white;
 		font: 1rem;
-		font-family: var(--lexend-font);
+		/* font-family: var(--lexend-font); */
 		font-weight: 400;
 	}
 
@@ -86,20 +87,20 @@ import TopicNavigationBar from "@components/TopicNavigationBar.astro";
 	}
 
 	pre {
-		background-color: #4d4d4d;
+		background-color: #24292e;
 		padding: 1.2rem;
 		border-radius: 0.4rem;
 		margin-bottom: 0.5rem;
 	}
 
-	pre > code {
-		background-color: #4d4d4d;
+	code {
+		border-radius: 0.4rem;
+		background-color: #24292e;
+		padding-top: 0.3em;
 	}
 
-	p > code {
-		border-radius: 0.4rem;
-		background-color: #4d4d4d;
-		padding: 0.3em;
+	code > span {
+		font-size: 0.9em !important;
 	}
 
 	blockquote {

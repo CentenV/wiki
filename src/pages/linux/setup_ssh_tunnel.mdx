@@ -1,0 +1,20 @@
+---
+title: "Setup SSH Tunnel"
+layout: "@layout/Content.astro"
+---
+
+# {frontmatter.title}
+### Configuring the _sshd_config_
+##### In the SSH config file in `/etc/ssh/sshd_config` edit the `GatewayPorts` and `AllowTcpForwarding` lines to the following
+
+```
+GatewayPorts yes
+AllowTcpForwarding yes
+```
+
+### Restart the SSH service
+
+```bash
+sudo systemctl restart sshd
+sudo systemctl status sshd
+```

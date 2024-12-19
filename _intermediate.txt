@@ -1,0 +1,15 @@
+---
+import Banner from "@background/*PAGE_NAME*.jpg";
+import IntermediatePage from "@components/IntermediatePage.astro";
+const title: string = "*PAGE_NAME*";
+const url: string = Astro.url.pathname;
+const pages = import.meta.glob("./*mdx", { eager: true });
+---
+
+<IntermediatePage
+    title={title}
+    url={url}
+    pages={pages}
+    banner={Banner}
+    bannerOptions={{ offset: "*CUSTOM_RESCALING*" }}
+/>
