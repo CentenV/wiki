@@ -1,22 +1,23 @@
 ---
 import Intermediate from "@layout/Intermediate.astro";
 import Wiki from "@layout/Wiki.astro";
-import type { ImageMetadata } from "astro";
 import PageList from "./PageList";
-
+import type { BackgroundImage } from "@/types";
 
 interface Props {
     title: string;
     url: string;
     pages: Record<string, any>;
-    banner: ImageMetadata;
-    bannerOptions?: { video?: boolean, offset?: string }
+    banner: BackgroundImage;
 }
-const { title, url, pages, banner, bannerOptions } = Astro.props;
+const { title, url, pages, banner } = Astro.props;
 ---
 
 <Wiki>
-    <Intermediate title={title} backgroundImage={{ url: banner.src, video: (bannerOptions! && bannerOptions!.video!), offset: bannerOptions?.offset }}>
+    <Intermediate
+        title={title}
+        backgroundImage={banner}
+    >
         <PageList pages={pages} url={url} />
     </Intermediate>
 </Wiki>
