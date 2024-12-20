@@ -25,15 +25,17 @@ const { title, backgroundImage } = Astro.props;
                 <img
                     alt="Background Banner"
                     src={backgroundImage.url}
-                    class={`w-full rounded-wiki ${backgroundImage.offset}`}
+                    class={`w-full rounded-wiki block object-cover  ${backgroundImage.offset}`}
                     draggable={false}
                 />
             )
         }
     </div>
-    <div class="p-8">
+    <div class="p-4">
         {/* Misc */}
-        <header>{title}</header>
+        <div>
+            <header class="mt-3 mb-3">{title}</header>
+        </div>
         {/* Links */}
         <div class="flex flex-col gap-3">
             <slot />
@@ -43,6 +45,6 @@ const { title, backgroundImage } = Astro.props;
 
 <style>
     img {
-        object-fit: cover;
+        object-position: center 100%;
     }
 </style>

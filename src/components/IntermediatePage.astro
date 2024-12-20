@@ -2,7 +2,8 @@
 import Intermediate from "@layout/Intermediate.astro";
 import Wiki from "@layout/Wiki.astro";
 import type { ImageMetadata } from "astro";
-import type { BackgroundImage } from "src/types";
+import PageList from "./PageList";
+
 
 interface Props {
     title: string;
@@ -16,12 +17,6 @@ const { title, url, pages, banner, bannerOptions } = Astro.props;
 
 <Wiki>
     <Intermediate title={title} backgroundImage={{ url: banner.src, video: (bannerOptions! && bannerOptions!.video!), offset: bannerOptions?.offset }}>
-        {
-            Object.entries(pages).map(([pagePath, data]) => {
-                const destinationUrl =
-                    url + pagePath.substring(1, pagePath.length - 4);
-                return <a href={destinationUrl}>{data.frontmatter.title}</a>;
-            })
-        }
+        <PageList pages={pages} url={url} />
     </Intermediate>
 </Wiki>
