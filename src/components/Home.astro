@@ -1,17 +1,20 @@
 ---
 import AnimatedGradientBackground from "./animatedgradientbackground";
-
-
+import FullWikiLogo from "@assets/wikilogofull.svg";
 ---
 
 <AnimatedGradientBackground>
-	<div class="flex w-full h-2/3 justify-center">
-		<h1 class="font-extrabold text-7xl">CentenV&apos;s Wiki</h1>
+	<div class="grid grid-rows-3 w-full h-2/3 justify-center mx-10">
+		<h1 class="flex align-middle justify-center justify-self-center">
+			<img
+				src={FullWikiLogo.src}
+				style={{ height: "50%", width: "40vw" }}
+				alt="CentenV's Personal Wiki"
+				draggable="false"
+			/>
+		</h1>
+		<!-- <span class="max-w-3xl row-span-1 row-start-2 justify-self-center bg-opacity-70 rounded-wiki w-3/4 h-min p-4 font-bold overflow-hidden text-2xl bg-wiki-background-color">
+			<p class="text-center opacity-100">Organized repository documenting concepts, notes, code snippets, project details, and resources related to computer science</p>
+		</span> -->
 	</div>
 </AnimatedGradientBackground>
-
-<!-- <div class="flex h-full overflow-hidden justify-center items-center">
-	<div class="flex w-full h-2/3 justify-center">
-		<h1 class="font-extrabold text-7xl">CentenV&apos;s Wiki</h1>
-	</div>
-</div> -->
