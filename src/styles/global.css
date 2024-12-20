@@ -6,6 +6,7 @@ body {
     color: white;
     font: 1rem;
     font-weight: 400;
+    transition: ease;
 }
 
 header {
@@ -18,3 +19,18 @@ header {
         --radius: 0.5rem;
     }
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
