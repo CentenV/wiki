@@ -6,4 +6,9 @@ const url: string = Astro.url.pathname;
 const pages = import.meta.glob("./*mdx", { eager: true });
 ---
 
-<IntermediatePage title={title} url={url} pages={pages} banner={Banner} bannerOptions={{ offset: "-translate-y-32" }} />
+<IntermediatePage
+    title={title}
+    url={url}
+    pages={pages}
+    banner={{ obj: Banner, offset: "-translate-y-32" }}
+/>

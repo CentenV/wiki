@@ -1,1 +1,1 @@
-export interface BackgroundImage { url: string, video: boolean, offset?: string }
+export interface BackgroundImage { obj: ImageMetadata, offset?: string }
