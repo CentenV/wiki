@@ -1,6 +1,7 @@
 ---
 title: "*PAGE_TITLE*"
 layout: "@layout/Content.astro"
+icon: "*ICON_FILE_NAME_IN_ICONS_DIR*"
 ---
 
 # {frontmatter.title}
