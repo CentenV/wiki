@@ -8,19 +8,16 @@ export default {
     			'wiki-sidebar-full': '16rem',
     			'wiki-logo': '10%'
     		},
-    		typography: {
-    			DEFAULT: {
-    				css: {
-    					maxWidth: '100%'
-    				}
-    			}
-    		},
-    		borderRadius: {
-    			lg: 'var(--radius)',
-    			md: 'calc(var(--radius) - 2px)',
-    			sm: 'calc(var(--radius) - 4px)'
-    		},
-    		colors: {}
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100%'
+					}
+				}
+			},
+			gridTemplateColumns: {
+				'intermediate-page-link': '2em 1fr'
+			},
     	},
     	colors: {
     		'wiki-background-color': '#121212',
@@ -33,7 +30,7 @@ export default {
     	borderWidth: {
     		'wiki-default': '1px',
     		'wiki-h2': '1px'
-    	}
+    	},
     },
 	plugins: [
 		require("@tailwindcss/typography"),
