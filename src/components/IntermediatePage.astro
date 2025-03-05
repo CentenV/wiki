@@ -8,7 +8,7 @@ interface Props {
     title: string;
     url: string;
     pages: Record<string, any>;
-    banner: BackgroundImage;
+    banner?: BackgroundImage;
 }
 const { title, url, pages, banner } = Astro.props;
 ---

@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 
 interface Props {
     title: string;
-    backgroundImage: BackgroundImage;
+    backgroundImage?: BackgroundImage;
 }
 const { title, backgroundImage } = Astro.props;
 ---
@@ -13,7 +13,7 @@ const { title, backgroundImage } = Astro.props;
 <div class="flex flex-col h-full w-full">
     {/* Background Image/Video */}
     <div class=`intermediate-page-bg rounded-wiki h-1/3 overflow-hidden`>
-        <Image src={backgroundImage.obj} alt={""}/>
+        { backgroundImage ? <Image src={backgroundImage.obj} alt={""}/> : <div class="bg-wiki-hud-border-color h-full"></div> }
     </div>
     <div class="p-4">
         {/* Misc */}
