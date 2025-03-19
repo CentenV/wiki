@@ -2,13 +2,12 @@
 import wikiLogo from "@assets/wikilogo.svg";
 import type { ImageMetadata } from "astro";
 import topics from "@pages/_topics.json";
-import type React from "react";
 
 const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/icons/*.{svg,jpeg,jpg,png,gif}", { eager: true });
 ---
 
 
-<nav class="flex flex-col col-start-1 col-span-1 overflow-hidden w-full gap-7">
+<nav class="flex flex-col col-start-1 col-span-1 overflow-hidden w-full gap-7 select-none">
     <a href="/" class="mt-3 w-max h-14" draggable={false}
         ><img src={wikiLogo.src} alt="Wiki Logo" class="h-full" /></a
     >
@@ -20,7 +19,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/icons/*
             const iconPath = `/src/assets/icons/${icon_file}`;
 
             if (!images[iconPath]) { 
-                console.warn(`Icon "${iconPath}" for /${icon_file} not found`);
+                console.warn(`Icon "${iconPath}" for /${icon_file} not found in the topic navigation bar`);
             }
 
             return (
