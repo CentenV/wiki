@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Databases",
+        "directory": "database",
+        "icon_file": "db.svg"
+    },
+    {
+        "title": "Linux",
+        "directory": "linux",
+        "icon_file": "linux.svg"
+    }
+]

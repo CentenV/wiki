@@ -1,20 +1,44 @@
 ---
-import type { BackgroundImage } from "src/types";
+import type { BannerIcon, BannerImage } from "src/types";
 import "@style/global.css";
 import { Image } from "astro:assets";
 
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/icons/*.{svg,jpeg,jpg,png,gif}", { eager: true });
+
 interface Props {
     title: string;
-    backgroundImage: BackgroundImage;
+    bannerImage?: BannerImage;
+    bannerIcon?: BannerIcon;
 }
-const { title, backgroundImage } = Astro.props;
+const { title, bannerImage, bannerIcon } = Astro.props;
+
+const iconPath = `/src/assets/icons/${bannerIcon?.path}`;
+if (bannerIcon && !images[iconPath]) {
+    console.warn(`Icon "${bannerIcon.path}" not found for intermediate page banner`);
+}
+
 ---
 
-<div class="flex flex-col h-full w-full">
-    {/* Background Image/Video */}
-    <div class=`intermediate-page-bg rounded-wiki h-1/3 overflow-hidden`>
-        <Image src={backgroundImage.obj} alt={""}/>
-    </div>
+<div class="flex flex-col h-full w-full select-none">
+    {/* Icon Banner */}
+    {
+        bannerIcon && (
+            <div class="intermediate-page-bg rounded-wiki h-1/3 overflow-hidden">
+                <div class="bg-wiki-hud-border-color h-full flex justify-center align-middle">
+                    <img src={images[iconPath].default.src} alt={`${title} icon`} width="150" draggable="false" />
+                </div>
+            </div>
+        )
+    }
+    {/* Image/Video Banner */}
+    {
+        bannerImage && (
+            <div class="intermediate-page-bg rounded-wiki h-1/3 overflow-hidden">
+                <Image src={bannerImage.obj} alt={""} />
+            </div>
+        )
+    }
+
     <div class="p-4">
         {/* Misc */}
         <div>
