@@ -2,21 +2,29 @@
 import Intermediate from "@layout/Intermediate.astro";
 import Wiki from "@layout/Wiki.astro";
 import PageList from "./PageList";
-import type { BackgroundImage } from "@/types";
+import type { BannerIcon, BannerImage } from "@/types";
 
 interface Props {
     title: string;
     url: string;
     pages: Record<string, any>;
-    banner: BackgroundImage;
+    banner_image?: BannerImage;
+    banner_icon?: BannerIcon;
 }
-const { title, url, pages, banner } = Astro.props;
+const { title, url, pages, banner_image, banner_icon } = Astro.props;
+
+if (banner_image && banner_icon) {
+    throw new Error(
+        "Properties banner_image and banner_icon are mutually exclusive but both are specified ",
+    );
+}
 ---
 
 <Wiki>
     <Intermediate
         title={title}
-        backgroundImage={banner}
+        bannerImage={banner_image}
+        bannerIcon={banner_icon}
     >
         <PageList pages={pages} url={url} />
     </Intermediate>

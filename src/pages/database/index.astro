@@ -1,6 +1,6 @@
 ---
 import IntermediatePage from "@components/IntermediatePage.astro";
-const title: string = "Linux";
+const title: string = "*PAGE_NAME*";
 const url: string = Astro.url.pathname;
 const pages = import.meta.glob("./*mdx", { eager: true });
 ---
@@ -9,5 +9,4 @@ const pages = import.meta.glob("./*mdx", { eager: true });
     title={title}
     url={url}
     pages={pages}
-    banner_icon={{ bgColor: "", path: "linux.svg" }}
 />
