@@ -5,33 +5,27 @@ import "@style/global.css";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>CentenV's Wiki</title>
-	</head>
-	<body>
-		<div
-			id="page_contents"
-			class="grid-rows-1 overflow-hidden bg-wiki-background-color h-screen w-screen px-5 py-4 gap-6 flex-shrink-0"
-		>
-			{/* Navbar */}
-			<TopicNavigationBar />
-			{/* Content */}
-			<main
-				class="bg-wiki-foreground-color col-start-2 col-span-1 rounded-wiki border-wiki border-wiki-border-color w-full h-full overflow-hidden"
-			>
-				<slot />
-			</main>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CentenV's Wiki</title>
+  </head>
+  <body>
+    <div
+      id="page_contents"
+      class="antialiased overflow-hidden bg-wiki-background-color h-screen w-screen"
+    >
+      {/* Navbar */}
+      <TopicNavigationBar />
+      {/* Content */}
+      <main
+        class="lg:ml-72 sm:px-10 sm:pr-5 xl:pr-72 bg-wiki-foreground-color rounded-wiki border-wiki border-wiki-border-color w-auto h-full pt-6 overflow-hidden"
+      >
+        <slot />
+      </main>
+      <!-- <div class="hidden lg:block col-start-3 col-span-1">wadsdadsd</div> -->
+    </div>
+  </body>
 </html>
-
-<style is:inline>
-	#page_contents { 
-		display: grid;
-		grid-template-columns: 14rem auto 14rem;
-	}
-</style>
