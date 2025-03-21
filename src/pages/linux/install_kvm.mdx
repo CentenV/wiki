@@ -33,19 +33,19 @@ sudo usermod -a -G libvirt $(whoami)
 
 
 
-# Enabling Wake-on-LAN
+## Enabling Wake-on-LAN
 Remember to enable wake-on-lan capabilities in the BIOS.
 ### Configuring the Linux network interfaces to enable Wake-on-LAN
 
 ```
-# Temporarily enables wake-on-lan
+## Temporarily enables wake-on-lan
 sudo ethtool -s <interface> wol g
 # Permanently enabled wake-on-lan
 sudo nmcli connection modify <interface> 802-3-ethernet.wake-on-lan magic
 sudo nmcli connection up 
 ```
 
-# Restrict Command Execution
+## Restrict Command Execution
 ### Create _rbash_ if it doesn't exist
 
 ```
@@ -62,7 +62,7 @@ PATH=$HOME/allowed_programs_folder
 #### To add more, just copy the executable or create a symbolic link in this folder
 
 
-# Certain Command Execution with sudo privlages
+## Certain Command Execution with sudo privlages
 Edit the _/etc/sudoers_ or run _visudo_
 ### Add the following line
 
