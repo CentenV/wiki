@@ -1,0 +1,36 @@
+---
+title: "General"
+layout: "@layout/Content.astro"
+---
+
+# Documentation - wiki.centen.dev
+
+Goal: Provide a platform for logging information and presenting articles/tutorials/guides about any computer science topic
+
+## Wiki Page Hierarchy
+Pages are built in hierachy where intermediate pages are the root of every page. 
+
+All tree leaves must be content pages. An intermediate page cannot be at the leaf of the tree and no content page may have page as its child(ren).
+
+<u>Sample page hierarchy:</u>
+![](/page_model.svg)
+
+## Page File Hierarchy
+New pages are added to the `src/pages` directory
+```
+src/pages
+|
++ topic: Name of the topic
+    | 
+    + (subtopic)?
+    |
+    + index.astro
+    |
+    + page.mdx
+```
+
+`index.astro`: Intermediate page boilerplate 
+
+`page.mdx`: Content page. Multiple .mdx content pages can be located under one topic
+
+`(subtopic)?`: Any subtopics. Intermediate pages can be nested in other intermediate pages
