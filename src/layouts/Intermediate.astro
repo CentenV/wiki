@@ -39,20 +39,12 @@ if (bannerIcon && !images[iconPath]) {
         )
     }
 
-    <div class="p-4">
+    <div class="flex flex-col gap-8">
         {/* Misc */}
-        <div>
-            <header class="mt-3 mb-3">{title}</header>
-        </div>
+        <header class="leading-[1]">{title}</header>
         {/* Links */}
         <div class="flex flex-col gap-3">
             <slot />
         </div>
     </div>
 </div>
-
-<style>
-    img {
-        object-position: center 100%;
-    }
-</style>

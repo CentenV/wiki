@@ -7,6 +7,7 @@ export default function PageList({ pages, url }: { pages: Record<string, any>, u
                 Object.entries(pages).map(([pagePath, data]) => {
                     // URL to the page in the list
                     const destinationUrl = url + pagePath.substring(1, pagePath.length - 4);
+                    // TODO: FIX
                     // Resolve icon
                     const iconPath = `/src/assets/icons/${data.frontmatter["icon"]}`
                     return (
