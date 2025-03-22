@@ -1,12 +1,15 @@
-[
-    {
-        "title": "Databases",
-        "directory": "database",
-        "icon_file": "db.svg"
-    },
-    {
-        "title": "Linux",
-        "directory": "linux",
-        "icon_file": "linux.svg"
-    }
-]
+{
+    "$schema": "https://gist.githubusercontent.com/CentenV/6286a124a6ccaabf05634b3ed6ae19a9/raw/5b2512de070b1cdffeb934d0e623fb497ebe966d/schema.json",
+    "topics": [
+        {
+            "title": "Databases",
+            "directory": "database",
+            "icon_file": "db.svg"
+        },
+        {
+            "title": "Linux",
+            "directory": "linux",
+            "icon_file": "linux.svg"
+        }
+    ]
+}
