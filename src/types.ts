@@ -1,2 +1,5 @@
-export interface BannerImage { obj: ImageMetadata, offset?: string }
-export interface BannerIcon { path: string, bgColor: string }
+export interface BannerResource {
+    type: "image" | "icon",
+    src: string,
+    invert: boolean,
+};

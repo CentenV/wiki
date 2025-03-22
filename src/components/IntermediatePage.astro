@@ -1,31 +1,69 @@
 ---
-import Intermediate from "@layout/Intermediate.astro";
 import Wiki from "@layout/Wiki.astro";
 import PageList from "./PageList";
-import type { BannerIcon, BannerImage } from "@/types";
+import type { BannerResource } from "@/types";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/icons/*.{svg,jpeg,jpg,png,gif}",
+  { eager: true }
+);
 
 interface Props {
-    title: string;
-    url: string;
-    pages: Record<string, any>;
-    banner_image?: BannerImage;
-    banner_icon?: BannerIcon;
+  title: string;
+  url: string;
+  pages: Record<string, any>;
+  accentColor: string;
+  bannerResource?: BannerResource;
 }
-const { title, url, pages, banner_image, banner_icon } = Astro.props;
+// const { title, url, pages, accent_color, banner_resource } = Astro.props;
+const { title, url, pages, accentColor, bannerResource } = Astro.props;
 
-if (banner_image && banner_icon) {
-    throw new Error(
-        "Properties banner_image and banner_icon are mutually exclusive but both are specified ",
-    );
-}
+const iconPath = `/src/assets/icons/${bannerResource?.src}`;
 ---
 
 <Wiki>
-    <Intermediate
-        title={title}
-        bannerImage={banner_image}
-        bannerIcon={banner_icon}
-    >
+  <div class="flex flex-col h-full w-full select-none">
+    {
+      bannerResource && bannerResource.type == "icon" && (
+        <div
+          class={`background-accent-color rounded-wiki mb-8 h-1/3 overflow-hidden`}
+        >
+          <div class="h-full flex justify-center align-middle">
+            <img
+              src={images[iconPath].default.src}
+              alt={`${title} icon`}
+              width="150"
+              draggable="false"
+            />
+          </div>
+        </div>
+      )
+    }
+    <!-- // Image/Video Banner
+    //   banner_resource?.type == "image" && (
+    //     <div class="intermediate-page-bg rounded-wiki h-1/3 overflow-hidden">
+    //       <Image src={bannerImage.obj} alt={`${title} image`} />
+    //     </div>
+    //   ) -->
+
+    <div class="flex flex-col gap-8">
+      {/* Misc */}
+      <div>
+        <header class="leading-[1] ml-2 mb-1">
+          {title}
+        </header>
+        <div class=`ml-2 w-6 h-1 background-accent-color`></div>
+      </div>
+      {/* Links */}
+      <div class="flex flex-col gap-3">
         <PageList pages={pages} url={url} />
-    </Intermediate>
+      </div>
+    </div>
+  </div>
 </Wiki>
+
+<style define:vars={{ accentColor }}>
+  .background-accent-color {
+    background-color: var(--accentColor);
+  }
+</style>

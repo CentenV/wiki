@@ -5,29 +5,42 @@ layout: "@layout/Content.astro"
 
 # Templates for every page type
 
+Every page has some boilerplate that is unavoidable and is important to maintain consistency amongst the wiki pages.
+
 ## Content Pages
-Metadata defining each page:
+
+### Metadata defining each page:
 
 ```
 ---
-title: "Page Title/Topic"
-
-    Title of content page. What the article/page is about
-
-
+title: string
 layout: "@layout/Content.astro"
-
-icon?: "name_of_icon_file.svg"
-
-    Specifies what icon svg to use located in the src/icons folder
-
-
-banner_icon?: "path_to_icon.svg"
-
-banner_image?: i
-
+icon: string?
+icon_invert: bool?
 ---
 ```
+
+**title**: Title of content page. What the article/page is about \
+**layout**: Constant. Defines what layout to use \
+**icon**: Specifies what icon svg to use located in the src/icons folder \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ex: "name_of_icon_file.svg" \
+**icon_invert**: Invert the specified icon. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default: true 
 
 ## Intermediate Pages
 
+```ts
+---
+import IntermediatePage from "@components/IntermediatePage.astro";
+const title: string = ;
+const bannerPath = undefined;
+const bannerColor = undefined;
+---
+
+<IntermediatePage
+  title={title}
+  url={Astro.url.pathname}
+  pages={import.meta.glob("./*mdx", { eager: true })}
+  banner_icon={{ bgColor: (bannerColor) ? bannerColor : "", path: bannerPath }}
+/>
+```

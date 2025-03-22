@@ -19,7 +19,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     class="flex flex-col gap-3 p-4 border rounded-wiki border-wiki-default border-wiki-hud-elements-color"
   >
     {
-      topics.map(({ title, directory, icon_file }) => {
+      topics.topics.map(({ title, directory, icon_file }) => {
         const iconPath = `/src/assets/icons/${icon_file}`;
 
         if (!images[iconPath]) {

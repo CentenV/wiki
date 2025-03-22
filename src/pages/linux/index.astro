@@ -1,13 +1,18 @@
 ---
 import IntermediatePage from "@components/IntermediatePage.astro";
 const title: string = "Linux";
-const url: string = Astro.url.pathname;
-const pages = import.meta.glob("./*mdx", { eager: true });
+const accent_color = "#f8c008";
+const banner: { type: "image" | "icon", src: string, invert: boolean } = {
+  type: "icon",
+  src: "linux.svg",
+  invert: false,
+};
 ---
 
 <IntermediatePage
-    title={title}
-    url={url}
-    pages={pages}
-    banner_icon={{ bgColor: "", path: "linux.svg" }}
+  title={title}
+  url={Astro.url.pathname}
+  pages={import.meta.glob("./*mdx", { eager: true })}
+  accentColor={accent_color}
+  bannerResource={banner}
 />
